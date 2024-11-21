@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+  <title>Hora do dia</title>
+
+  <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body onload="carregar()">
+
+  <header>
+    <h1>Hora do dia</h1>
+  </header>
+
+  <section>
+
+    <div id="idMensagem">
+      aqui vai aparecer a hora
+    </div>
+
+    <div id="idImagem">
+      <img src="tarde.png" alt="Foto do dia">
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; Curso em Vídeo</p>
+  </footer>
+
+<!-- <script src="script.js"></script> -->
+
+  <script>
+    function carregar() {
+      var msg = window.document.getElementById('idMensagem');
+      var img = window.document.getElementById('idImagem');
+
+      var data = new Date();
+      var hora = data.getHours();
+
+      msg.innerHTML = `Agora são ${hora} horas`;
+
+      if (hora >= 0 && hora < 12) {
+        img.src = 'manha.png';
+        img.alt = 'Imagem da manhã';
+      } else if (hora >= 12 && hora < 18) {
+        img.src = 'tarde.png';
+        img.alt = 'Imagem da tarde';
+      } else {
+        img.src = 'noite.png';
+        img.alt = 'Imagem da noite';
+      }
+    }
+  </script>
+
+
+</body>
+</html>

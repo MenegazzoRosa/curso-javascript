@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Localização de Nacionalidade</title>
+
+</head>
+<body>
+
+  <h1>Localização de Nacionalidade</h1>
+
+  Localização: <input type="text" name="local" id="idLocal">
+  <input type="button" value="Verificar" onclick="verificar()">
+
+  <div id="idResposta">
+
+  </div>
+
+  <script>
+
+    function verificar() {
+
+      var txtLocal = window.document.getElementById('idLocal')
+      var res = window.document.querySelector('div#idResposta')
+
+       res.innerHTML = `<p>Localidade de nascimento: ${txtLocal.value}</p>`
+
+       if (txtLocal.value == 'Brasil') {
+        res.innerHTML += '<p>Você é <strong>Brasileiro</strong></p>'
+       }
+       else {
+        res.innerHTML += '<p>Você é estrangeiro</p>'
+       }
+
+    }
+
+  </script>
+
+</body>
+</html>
